@@ -58,7 +58,7 @@ const Projects = () => {
               className="flex flex-col group"
             >
               {/* Image / chart area */}
-              <div className="w-full min-w-[350px] overflow-hidden bg-[#2a2a2b] rounded-sm">
+              <div className="w-full min-w-full md:min-w-[350px] overflow-hidden bg-[#2a2a2b] rounded-sm">
                 <img
                   src={"./images/projects/" + project.img}
                   fetchPriority="high"
@@ -118,7 +118,7 @@ const Projects = () => {
                     }}
                     className="flex flex-col group"
                   >
-                    <div className="w-full h-[300px] overflow-hidden bg-[#2a2a2b] rounded-sm">
+                    <div className="w-full min-w-full md:min-w-[350px] overflow-hidden bg-[#2a2a2b] rounded-sm">
                       <img
                         src={"./images/projects/" + project.img}
                         alt={project.title}
@@ -159,7 +159,7 @@ const Projects = () => {
             <Button
               variant="secondary"
               onClick={() => setShowAll((prev) => !prev)}
-              className="font-normal"
+              className="font-normal !px-0"
             >
               {showAll ? (
                 <>

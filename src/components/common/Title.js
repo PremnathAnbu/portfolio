@@ -12,7 +12,7 @@ function Title({ children, ...props }) {
       custom={0}
       {...props}
     >
-      <h2 className="text-primary-text text-3xl md:text-4xl font-bold mb-2">
+      <h2 className="text-primary-text text-2xl md:text-4xl font-bold mb-2">
         {children}
       </h2>
       <motion.div

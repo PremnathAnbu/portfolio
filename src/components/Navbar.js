@@ -46,6 +46,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [menuKey, setMenuKey] = useState(0);
   const lastY = React.useRef(0);
 
   useEffect(() => {
@@ -142,7 +143,10 @@ const Navbar = () => {
           {/* Hamburger */}
           <HamburgerButton
             open={menuOpen}
-            onClick={() => setMenuOpen((p) => !p)}
+            onClick={() => {
+              if (!menuOpen) setMenuKey((k) => k + 1);
+              setMenuOpen((p) => !p);
+            }}
           />
         </div>
       </motion.nav>
@@ -151,7 +155,7 @@ const Navbar = () => {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            key="mobile-menu"
+            key={menuKey}
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
