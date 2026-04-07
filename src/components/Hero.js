@@ -74,6 +74,7 @@ const Hero = () => {
               Learn more
               <FontAwesomeIcon
                 icon={faArrowRight}
+                aria-hidden="true"
                 className="group-hover:translate-x-1 transition-transform duration-200"
               />
             </Button>

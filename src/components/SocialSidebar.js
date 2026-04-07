@@ -15,8 +15,8 @@ const SocialSidebar = () => {
         <motion.a
           key={s.label}
           href={s.href}
-          target="_blank"
-          rel="noopener noreferrer"
+          target={s.href.startsWith("mailto") ? undefined : "_blank"}
+          rel={s.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
           aria-label={s.label}
           className="text-secondary-text hover:text-accent transition-colors duration-200 p-2"
           initial={{ opacity: 0, x: -20 }}
@@ -28,7 +28,11 @@ const SocialSidebar = () => {
           whileHover={{ y: -3, transition: { duration: 0.2, ease: "easeOut" } }}
           transition={{ duration: 0.2, ease: "easeOut" }}
         >
-          <FontAwesomeIcon icon={s.icon} style={{ width: 20, height: 20 }} />
+          <FontAwesomeIcon
+            icon={s.icon}
+            aria-hidden="true"
+            style={{ width: 20, height: 20 }}
+          />
         </motion.a>
       ))}
       {/* Vertical line */}

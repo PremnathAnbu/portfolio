@@ -38,6 +38,8 @@ const Experience = () => {
               {/* Accordion header */}
               <button
                 onClick={() => toggle(i)}
+                aria-expanded={openSet.has(i)}
+                aria-controls={`experience-panel-${i}`}
                 className="w-full flex items-center justify-between py-5 text-left group"
               >
                 <div>
@@ -61,6 +63,7 @@ const Experience = () => {
                   className="text-secondary-text group-hover:text-primary-text text-lg select-none transition-colors duration-200"
                   animate={{ rotate: openSet.has(i) ? 180 : 0 }}
                   transition={{ duration: 0.3, ease: "easeInOut" }}
+                  aria-hidden="true"
                 >
                   <FontAwesomeIcon icon={faChevronDown} className="text-sm" />
                 </motion.span>
@@ -71,6 +74,9 @@ const Experience = () => {
                 {openSet.has(i) && (
                   <motion.div
                     key="content"
+                    id={`experience-panel-${i}`}
+                    role="region"
+                    aria-label={`${jobs[i].title} at ${jobs[i].company}`}
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
@@ -82,6 +88,7 @@ const Experience = () => {
                         <li key={bi} className="flex gap-2 text-[15px]">
                           <FontAwesomeIcon
                             icon={faCaretRight}
+                            aria-hidden="true"
                             className="text-accent mt-0.5 shrink-0"
                           />
                           <span className="text-secondary-text leading-relaxed">

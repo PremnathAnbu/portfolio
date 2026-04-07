@@ -76,16 +76,17 @@ const Projects = () => {
                 <p className="text-secondary-text text-sm leading-relaxed flex-1 mb-7">
                   {project.description}
                 </p>
-                <a
+                <Button
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
+                  size="sm"
+                  className="font-normal"
+                  aria-label={`View code for ${project.title} on GitHub`}
                 >
-                  <Button size="sm" className="font-normal">
-                    View Code
-                    <FontAwesomeIcon icon={faArrowRight} />
-                  </Button>
-                </a>
+                  View Code
+                  <FontAwesomeIcon icon={faArrowRight} aria-hidden="true" />
+                </Button>
               </div>
             </motion.div>
           ))}
@@ -132,19 +133,21 @@ const Projects = () => {
                       <p className="text-secondary-text text-sm leading-relaxed flex-1 mb-7">
                         {project.description}
                       </p>
-                      <a
+                      <Button
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
+                        size="sm"
+                        className="font-normal"
+                        aria-label={`View code for ${project.title} on GitHub`}
                       >
-                        <Button size="sm" className="font-normal">
-                          View Code
-                          <FontAwesomeIcon
-                            icon={faArrowRight}
-                            className="group-hover:translate-x-1 transition-transform duration-200"
-                          />
-                        </Button>
-                      </a>
+                        View Code
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          aria-hidden="true"
+                          className="group-hover:translate-x-1 transition-transform duration-200"
+                        />
+                      </Button>
                     </div>
                   </motion.div>
                 ))}
@@ -166,13 +169,18 @@ const Projects = () => {
                   Show Less{" "}
                   <FontAwesomeIcon
                     icon={faChevronDown}
+                    aria-hidden="true"
                     className="ml-1 rotate-180"
                   />
                 </>
               ) : (
                 <>
                   Show More{" "}
-                  <FontAwesomeIcon icon={faChevronDown} className="ml-1" />
+                  <FontAwesomeIcon
+                    icon={faChevronDown}
+                    aria-hidden="true"
+                    className="ml-1"
+                  />
                 </>
               )}
             </Button>

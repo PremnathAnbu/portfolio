@@ -84,6 +84,7 @@ const Navbar = () => {
         initial={{ y: 0, opacity: 1 }}
         animate={{ y: hidden ? -100 : 0, opacity: hidden ? 0 : 1 }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
+        aria-label="Main navigation"
         className={`fixed top-0 left-0 right-0 z-[101] transition-colors duration-300 ${
           scrolled && !menuOpen
             ? "bg-primary-bg/95 backdrop-blur-md shadow-[0_10px_15px_-3px_rgba(8,253,216,0.08)]"
@@ -160,6 +161,9 @@ const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.4, ease: [0.76, 0, 0.24, 1] }}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile menu"
             className="fixed inset-0 z-[100] bg-primary-bg flex flex-col pt-[100px] md:hidden"
           >
             {/* Nav links */}

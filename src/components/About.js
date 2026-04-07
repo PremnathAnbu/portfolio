@@ -43,6 +43,7 @@ const About = () => {
               <li key={skill.label} className="flex gap-2">
                 <FontAwesomeIcon
                   icon={faCaretRight}
+                  aria-hidden="true"
                   className="text-accent mt-0.5 shrink-0"
                 />
                 <span>

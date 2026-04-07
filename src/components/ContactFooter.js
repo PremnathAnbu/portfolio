@@ -33,15 +33,14 @@ const Contact = () => {
           I'll try my best to get back to you!
         </motion.p>
 
-        <motion.a
-          href="mailto:premnath@example.com"
+        <motion.div
           variants={fadeUp}
           custom={0.35}
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.97 }}
         >
-          <Button>Say Hi!</Button>
-        </motion.a>
+          <Button href="mailto:premnath@example.com">Say Hi!</Button>
+        </motion.div>
         {/* Socials — mobile only (sidebar is hidden on mobile) */}
         <motion.div
           className="flex md:hidden items-center gap-6 mt-8"

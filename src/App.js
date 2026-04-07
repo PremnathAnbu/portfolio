@@ -10,9 +10,15 @@ import { Contact, Footer } from "./components/ContactFooter";
 function App() {
   return (
     <div className="bg-primary-bg min-h-screen">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:bg-accent focus:text-primary-bg focus:px-4 focus:py-2 focus:rounded focus:text-sm focus:font-medium"
+      >
+        Skip to main content
+      </a>
       <Navbar />
       <SocialSidebar />
-      <main className="md:px-14 lg:px-18">
+      <main id="main-content" className="md:px-14 lg:px-18">
         <Hero />
         <About />
         <Experience />
