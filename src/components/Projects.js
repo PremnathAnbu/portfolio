@@ -81,7 +81,7 @@ const Projects = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   size="sm"
-                  className="font-normal"
+                  className="font-normal w-max"
                   aria-label={`View code for ${project.title} on GitHub`}
                 >
                   View Code
@@ -138,7 +138,7 @@ const Projects = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         size="sm"
-                        className="font-normal"
+                        className="font-normal w-max"
                         aria-label={`View code for ${project.title} on GitHub`}
                       >
                         View Code
