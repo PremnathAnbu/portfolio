@@ -103,8 +103,8 @@ const Navbar = () => {
           </motion.button>
 
           {/* Desktop Nav Links */}
-          <div className="hidden md:flex items-center gap-8">
-            <ul className="flex items-center gap-8 list-none">
+          <div className="hidden md:flex items-center gap-4">
+            <ul className="flex items-center list-none">
               {navLinks.map((item, i) => (
                 <motion.li
                   key={item.id}
@@ -118,7 +118,7 @@ const Navbar = () => {
                 >
                   <button
                     onClick={() => scrollToSection(item.id)}
-                    className="text-sm font-medium hover:text-accent transition-colors duration-200"
+                    className="text-sm font-medium hover:text-accent transition-colors duration-200 py-2 px-4"
                   >
                     {item.label}
                   </button>
