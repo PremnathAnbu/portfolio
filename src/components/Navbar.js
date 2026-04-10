@@ -95,6 +95,7 @@ const Navbar = () => {
           {/* Logo */}
           <motion.button
             onClick={() => scrollToSection("hero")}
+            aria-label="Home"
             className="text-accent font-bold text-2xl lg:text-3xl tracking-wider hover:opacity-80 transition-opacity"
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}

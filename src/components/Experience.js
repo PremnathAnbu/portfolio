@@ -36,11 +36,16 @@ const Experience = () => {
               className="border-b border-border last:border-b-0"
             >
               {/* Accordion header */}
-              <button
+              <div
+                role="button"
+                tabIndex={0}
                 onClick={() => toggle(i)}
+                onKeyDown={(e) =>
+                  (e.key === "Enter" || e.key === " ") && toggle(i)
+                }
                 aria-expanded={openSet.has(i)}
                 aria-controls={`experience-panel-${i}`}
-                className="w-full flex items-center justify-between py-5 text-left group"
+                className="w-full flex items-center justify-between py-5 text-left group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               >
                 <div>
                   <span className="text-primary-text font-medium">
@@ -67,7 +72,7 @@ const Experience = () => {
                 >
                   <FontAwesomeIcon icon={faChevronDown} className="text-sm" />
                 </motion.span>
-              </button>
+              </div>
 
               {/* Accordion body */}
               <AnimatePresence initial={false}>

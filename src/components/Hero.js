@@ -41,8 +41,7 @@ const Hero = () => {
           <motion.h1
             variants={fadeUp}
             custom={defaultDelay + 0.1}
-            className="text-primary-text font-semibold leading-tight md:whitespace-nowrap"
-            style={{ fontSize: "clamp(40px, 7vw, 80px)" }}
+            className="text-primary-text font-semibold leading-tight md:whitespace-nowrap text-[clamp(40px,7vw,80px)]"
           >
             Premnath Anbu.
           </motion.h1>
@@ -51,8 +50,7 @@ const Hero = () => {
           <motion.h2
             variants={fadeUp}
             custom={defaultDelay + 0.2}
-            className="text-secondary-text font-bold leading-tight md:whitespace-nowrap mb-5"
-            style={{ fontSize: "clamp(36px, 6.5vw, 74px)" }}
+            className="text-secondary-text font-bold leading-tight md:whitespace-nowrap mb-5 text-[clamp(36px,6.5vw,74px)]"
           >
             I turn data into decisions.
           </motion.h2>

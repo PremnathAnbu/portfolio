@@ -24,6 +24,51 @@ function useColumnCount(ref) {
   return cols;
 }
 
+const ProjectCard = ({ project, index, columns }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.2 }}
+    transition={{
+      duration: 0.5,
+      ease: "easeOut",
+      delay: (index % columns) * 0.12,
+    }}
+    className="flex flex-col group"
+  >
+    <div className="w-full min-w-full md:min-w-[350px] overflow-hidden bg-[#2a2a2b] rounded-sm">
+      <img
+        src={"./images/projects/" + project.img}
+        alt={project.title}
+        className="w-full h-full object-cover"
+      />
+    </div>
+    <div className="flex flex-col flex-1 mt-4">
+      <h3 className="text-primary-text text-lg font-medium mb-2">
+        {project.title}
+      </h3>
+      <p className="text-secondary-text text-sm leading-relaxed flex-1 mb-7">
+        {project.description}
+      </p>
+      <Button
+        href={project.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        size="sm"
+        className="font-normal w-max"
+        aria-label={`View code for ${project.title} on GitHub`}
+      >
+        View Code
+        <FontAwesomeIcon
+          icon={faArrowRight}
+          aria-hidden="true"
+          className="group-hover:translate-x-1 transition-transform duration-200"
+        />
+      </Button>
+    </div>
+  </motion.div>
+);
+
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
   const initialProjects = allProjects.slice(0, INITIAL_VISIBLE);
@@ -45,50 +90,7 @@ const Projects = () => {
           className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-12"
         >
           {initialProjects.map((project, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{
-                duration: 0.5,
-                ease: "easeOut",
-                delay: (i % cols) * 0.12,
-              }}
-              className="flex flex-col group"
-            >
-              {/* Image / chart area */}
-              <div className="w-full min-w-full md:min-w-[350px] overflow-hidden bg-[#2a2a2b] rounded-sm">
-                <img
-                  src={"./images/projects/" + project.img}
-                  fetchPriority="high"
-                  alt={project.title}
-                  loading="eager"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Content */}
-              <div className="flex flex-col flex-1 mt-4">
-                <h3 className="text-primary-text text-lg font-medium mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-secondary-text text-sm leading-relaxed flex-1 mb-7">
-                  {project.description}
-                </p>
-                <Button
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  size="sm"
-                  className="font-normal w-max"
-                  aria-label={`View code for ${project.title} on GitHub`}
-                >
-                  View Code
-                  <FontAwesomeIcon icon={faArrowRight} aria-hidden="true" />
-                </Button>
-              </div>
-            </motion.div>
+            <ProjectCard key={i} project={project} index={i} columns={cols} />
           ))}
         </div>
 
@@ -102,54 +104,19 @@ const Projects = () => {
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
               className="overflow-hidden"
+              id="extra-projects"
             >
               <div
                 ref={extraGridRef}
                 className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-12 mt-12"
               >
                 {extraProjects.map((project, i) => (
-                  <motion.div
+                  <ProjectCard
                     key={i}
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                      duration: 0.5,
-                      ease: "ease",
-                      delay: (i % extraCols) * 0.12,
-                    }}
-                    className="flex flex-col group"
-                  >
-                    <div className="w-full min-w-full md:min-w-[350px] overflow-hidden bg-[#2a2a2b] rounded-sm">
-                      <img
-                        src={"./images/projects/" + project.img}
-                        alt={project.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="flex flex-col flex-1 mt-4">
-                      <h3 className="text-primary-text text-lg font-medium mb-2">
-                        {project.title}
-                      </h3>
-                      <p className="text-secondary-text text-sm leading-relaxed flex-1 mb-7">
-                        {project.description}
-                      </p>
-                      <Button
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        size="sm"
-                        className="font-normal w-max"
-                        aria-label={`View code for ${project.title} on GitHub`}
-                      >
-                        View Code
-                        <FontAwesomeIcon
-                          icon={faArrowRight}
-                          aria-hidden="true"
-                          className="group-hover:translate-x-1 transition-transform duration-200"
-                        />
-                      </Button>
-                    </div>
-                  </motion.div>
+                    project={project}
+                    index={i}
+                    columns={extraCols}
+                  />
                 ))}
               </div>
             </motion.div>
@@ -163,6 +130,8 @@ const Projects = () => {
               variant="secondary"
               onClick={() => setShowAll((prev) => !prev)}
               className="font-normal !px-0"
+              aria-expanded={showAll}
+              aria-controls="extra-projects"
             >
               {showAll ? (
                 <>
