@@ -21,18 +21,18 @@ const About = () => {
           custom={0.1}
         >
           <p className="text-secondary-text leading-7 mb-3">
-            I thrive at the intersection of technical engineering and high-level
-            business analytics. My journey began in Mechanical Engineering,
-            which instilled in me a disciplined approach to problem-solving.
-            Today, I apply that same rigor to Data Science — using Python, SQL,
-            and Power BI to uncover insights that drive operational efficiency.
+            I build intelligent systems end-to-end — from raw data to deployed, production-ready solutions. 
+            My core is machine learning and generative AI, backed by solid software engineering to make sure what I build actually ships and scales.
           </p>
           <p className="text-secondary-text leading-7 mb-10">
-            Whether it's architecting automated data scrapers, deploying
-            cloud-based applications on AWS/GCP, or fine-tuning Machine Learning
-            models, my goal is to build scalable solutions that make data work
-            for the user.
+            On the ML and data side, I design and deploy full pipelines — experiment tracking with MLflow, model versioning, and cloud deployments on AWS EC2 with CI/CD via GitHub Actions and Jenkins. 
+            I've built NLP systems for intelligent job-matching with an integrated AI agent layer, and I turn complex, messy datasets into clear business signals — using Python, SQL, and Power BI to build dashboards and analytics that drive real decisions. 
+            I've delivered global manufacturing dashboards tracking sales, revenue, and product performance across markets.
           </p>
+            <p className="text-secondary-text leading-7 mb-10">
+            Right now I'm going deep on LLM workflows, AI agents, and n8n automation — building systems where data doesn't just get analyzed, it gets acted on. Explore my work on GitHub ↗
+            </p>
+            
 
           <p className="text-secondary-text mb-5">
             Here are a few technologies I've been working with recently:
