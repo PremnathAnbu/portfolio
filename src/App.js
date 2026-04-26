@@ -21,7 +21,7 @@ function App() {
       <main id="main-content" className="md:px-14 lg:px-18">
         <Hero />
         <About />
-        <Experience />
+        {/* <Experience /> */}
         <Projects />
         <Contact />
       </main>

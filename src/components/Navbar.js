@@ -7,7 +7,7 @@ import { socials } from "../constants/socials";
 const navLinks = [
   { label: "Home", id: "hero" },
   { label: "About", id: "about" },
-  { label: "Experience", id: "experience" },
+  // { label: "Experience", id: "experience" },
   { label: "Work", id: "projects" },
 ];
 
