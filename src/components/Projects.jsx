@@ -1,10 +1,15 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowRight,
+  faArrowUpRightFromSquare,
+  faChevronDown,
+} from "@fortawesome/free-solid-svg-icons";
 import Button from "./common/Button";
 import Title from "./common/Title";
 import { allProjects } from "../constants/projects";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const INITIAL_VISIBLE = 6;
 
@@ -44,15 +49,30 @@ const ProjectCard = ({ project, index, columns }) => (
       />
     </div>
     <div className="flex flex-col flex-1 mt-4">
-      <h3 className="text-primary-text text-lg font-medium mb-2">
+      <h3 className="text-primary-text text-lg font-medium mb-3">
         {project.title}
       </h3>
-      <p className="text-secondary-text text-sm leading-relaxed flex-1 mb-7">
+
+      <p className="text-secondary-text text-sm leading-relaxed flex-1 mb-5">
         {project.description}
       </p>
+      {project.tools && project.tools.length > 0 && (
+        <div className="flex flex-wrap gap-[10px] mb-6">
+          {project.tools.map((tool, idx) => (
+            <span
+              key={idx}
+              className="text-xs bg-[rgba(255,255,255,0.16)] text-secondary-text px-2 py-[3px] rounded-sm cursor-default"
+            >
+              {tool}
+            </span>
+          ))}
+        </div>
+      )}
+
       <Button
         href={project.github}
         target="_blank"
+        // variant="link"
         rel="noopener noreferrer"
         size="sm"
         className="font-normal w-max"
@@ -60,9 +80,9 @@ const ProjectCard = ({ project, index, columns }) => (
       >
         View Code
         <FontAwesomeIcon
-          icon={faArrowRight}
+          icon={faArrowUpRightFromSquare}
           aria-hidden="true"
-          className="group-hover:translate-x-1 transition-transform duration-200"
+          className="text-[14px] ml-1"
         />
       </Button>
     </div>
@@ -87,7 +107,7 @@ const Projects = () => {
         {/* Grid */}
         <div
           ref={gridRef}
-          className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-12"
+          className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-12 gap-y-20"
         >
           {initialProjects.map((project, i) => (
             <ProjectCard key={i} project={project} index={i} columns={cols} />

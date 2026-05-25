@@ -16,7 +16,7 @@ function Title({ children, ...props }) {
         {children}
       </h2>
       <motion.div
-        className="h-[3px] bg-accent origin-left"
+        className="h-[3px] bg-accent origin-left rounded"
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
         viewport={viewport}
