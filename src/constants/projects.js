@@ -1,20 +1,23 @@
 export const allProjects = [
   {
     img: "dummy-image.webp",
-    title: "The Bias Variance Tradeoff",
+    title: "AI-Powered Network Threat Detection System",
     description:
-      "Built a robust predictive modeling system using Python and Scikit-Learn, orchestrated with Apache Airflow for automated data ingestion and cleaning.",
+      "Developed a scalable Network Threat Detection platform that automates data ingestion, validation, transformation, and model training using Machine Learning. Integrated FastAPI APIs, MLflow + DagsHub experiment tracking, Docker containerization, and CI/CD pipelines for production-ready deployment.
+",
     tools: [
-      "Python",
-      "Scikit-Learn",
-      "Apache Airflow",
-      "n8n",
-      "LangSmith",
-      "MLflow",
+      "PYTHON",
+      "FASTAPI",
+      "SCIKIT-LEARN",
+      "MLFLOW",
+      "MONGODB",
+      "DOCKER",
+      "DAGSHUB",
+      "GITHUB ACTION",
       "AWS",
     ],
     image: null,
-    github: "https://github.com",
+    github: "https://github.com/PremnathAnbu/Network_Security",
   },
   {
     img: "dummy-image.webp",
@@ -35,20 +38,22 @@ export const allProjects = [
   },
   {
     img: "dummy-image.webp",
-    title: "The Bias Variance Tradeoff",
+    title: "StayPredict — Hotel Cancellation Prediction System",
     description:
-      "Built a robust predictive modeling system using Python and Scikit-Learn, orchestrated with Apache Airflow for automated data ingestion and cleaning.",
+      "Built a production-grade Machine Learning system to predict hotel reservation cancellations using LightGBM and an end-to-end modular ML pipeline. Developed a Flask-based web application with Docker containerization, MLflow tracking, Jenkins CI/CD automation, and Google Cloud Run deployment with model versioning through Google Cloud Storage.
+",
     tools: [
-      "Python",
-      "Scikit-Learn",
-      "Apache Airflow",
-      "n8n",
-      "LangSmith",
-      "MLflow",
-      "AWS",
+      "PYTHON",
+      "FLASK",
+      "SCIKIT-LEARN",
+      "LIGHTBGM",
+      "MLFLOW",
+      "GOOGLE CLOUD",
+      "DOCKER",
+      "JENKINS",
     ],
     image: null,
-    github: "https://github.com",
+    github: "https://github.com/PremnathAnbu/Hotel_reservation_using-GCP-jenkins",
   },
   {
     img: "dummy-image.webp",
