@@ -3,8 +3,7 @@ export const allProjects = [
     img: "dummy-image.webp",
     title: "AI-Powered Network Threat Detection System",
     description:
-      "Developed a scalable Network Threat Detection platform that automates data ingestion, validation, transformation, and model training using Machine Learning. Integrated FastAPI APIs, MLflow + DagsHub experiment tracking, Docker containerization, and CI/CD pipelines for production-ready deployment.
-",
+      "Developed a scalable Network Threat Detection platform that automates data ingestion, validation, transformation, and model training using Machine Learning. Integrated FastAPI APIs, MLflow + DagsHub experiment tracking, Docker containerization, and CI/CD pipelines for production-ready deployment.",
     tools: [
       "PYTHON",
       "FASTAPI",
@@ -40,8 +39,7 @@ export const allProjects = [
     img: "dummy-image.webp",
     title: "StayPredict — Hotel Cancellation Prediction System",
     description:
-      "Built a production-grade Machine Learning system to predict hotel reservation cancellations using LightGBM and an end-to-end modular ML pipeline. Developed a Flask-based web application with Docker containerization, MLflow tracking, Jenkins CI/CD automation, and Google Cloud Run deployment with model versioning through Google Cloud Storage.
-",
+      "Built a production-grade Machine Learning system to predict hotel reservation cancellations using LightGBM and an end-to-end modular ML pipeline. Developed a Flask-based web application with Docker containerization, MLflow tracking, Jenkins CI/CD automation, and Google Cloud Run deployment with model versioning through Google Cloud Storage.",
     tools: [
       "PYTHON",
       "FLASK",
@@ -53,7 +51,8 @@ export const allProjects = [
       "JENKINS",
     ],
     image: null,
-    github: "https://github.com/PremnathAnbu/Hotel_reservation_using-GCP-jenkins",
+    github:
+      "https://github.com/PremnathAnbu/Hotel_reservation_using-GCP-jenkins",
   },
   {
     img: "dummy-image.webp",
