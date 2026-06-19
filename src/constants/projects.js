@@ -21,17 +21,20 @@ export const allProjects = [
   },
   {
     img: "project2.jpeg",
-    title: "The Bias Variance Tradeoff",
+    title:
+      "Multi-Agent LLM Orchestration System for Intelligent Task Automation",
     description:
-      "Built a robust predictive modeling system using Python and Scikit-Learn, orchestrated with Apache Airflow for automated data ingestion and cleaning.",
+      "A production-ready multi-agent AI system built with LangGraph and LangChain that orchestrates specialised LLM agents through a stateful graph — each agent handling a distinct role in the reasoning pipeline. The system exposes a FastAPI backend (port 9999) and a Streamlit UI (port 8501), fully containerised with Docker and automated through a Jenkins CI/CD pipeline — demonstrating end-to-end agentic AI engineering from graph design to deployment.",
+
     tools: [
-      "Python",
-      "ScikitLearn",
-      "ApacheAirflow",
-      "N8n",
-      "LangSmith",
-      "MLflow",
-      "AWS",
+      "LANGGRAPH",
+      "LANGCHAIN",
+      "FASTAPI",
+      "UVICORN",
+      "DOCKER",
+      "JENKINS CI/CD",
+      "STREAMLIT",
+      "PYDANTIC",
     ],
     image: null,
     github: "https://github.com/PremnathAnbu/Multi-Agent-LLM-Orchestration-",
