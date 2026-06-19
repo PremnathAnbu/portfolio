@@ -61,7 +61,9 @@ const Hero = () => {
             custom={defaultDelay + 0.3}
             className="text-secondary-text text-base leading-relaxed max-w-[720px] mb-12"
           >
-            I’m a software engineer who turns data into intelligent systems using machine learning and generative AI—building scalable solutions that power smarter decisions and real-world results.
+            I’m a software engineer who turns data into intelligent systems
+            using machine learning and generative AI—building scalable solutions
+            that power smarter decisions and real-world results.
           </motion.p>
 
           {/* CTA Button */}
